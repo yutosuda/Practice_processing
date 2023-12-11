@@ -58,14 +58,125 @@
 //     line(mouseX,mouseY,pmouseX,pmouseY);
 // }
 
+// void setup() {
+//     size(480,120);
+//     stroke(0,102);
+// }
+
+// void draw() {
+//     float weight = dist(mouseX,mouseY,pmouseX,pmouseY);
+//     strokeWeight(weight);
+//     line(mouseX,mouseY,pmouseX,pmouseY);
+// }
+
+// float x;
+// float easing = 0.01;
+
+// void setup() {
+//     size(220,120);
+// }
+
+// void draw () {
+//     float targetX = mouseX;
+//     x += (targetX - x) * easing;
+//     ellipse(x,40,12,12);
+//     println(targetX + " : " + x);
+// }
+
+// float x;
+// float y;
+// float px;
+// float py;
+// float easing = 0.05;
+
+// void setup() {
+//     size(480,120);
+//     stroke(0,102);
+// }
+
+// void draw() {
+//     float targetX = mouseX;
+//     x += (targetX - x) * easing;
+//     float targetY = mouseY;
+//     y += (targetY - y) * easing;
+//     float weight = dist(x,y,px,py);
+//     strokeWeight(weight);
+//     line(x,y,px,py);
+//     py = y;
+//     px = x;
+// }
+
+// void setup() {
+//     size(240,120);
+//     strokeWeight(30);
+// }
+
+// void draw() {
+//     background(204);
+//     stroke(102);
+//     line(40,0,70,height);
+//     if (mousePressed == true) {
+//         stroke(0);
+//     }
+//     line(0,70,width,50);
+// }
+
+// void setup() {
+//     size(240, 120);
+//     strokeWeight(30);
+// }
+
+// void draw() {
+//     background(204);
+//     stroke(102);
+//     line(40, 0, 70, height);
+//     if (mousePressed) {
+//         stroke(0);
+//     } else {
+//         stroke(255);
+//     }
+//     line(0, 70, width, 50);
+// }
+
+// void setup() {
+//     size(120, 120);
+//     strokeWeight(30);
+// }
+
+// void draw() {
+//     background(204);
+//     stroke(102);
+//     line(40, 0, 70, height);
+//     if (mousePressed) {
+//         if (mouseButton == LEFT) {
+//             stroke(255);
+//         } else {
+//             stroke(0);
+//         }
+//         line(0, 70, width, 50);
+//     }
+// }
+
+float x;
+int offset = 10;
+
 void setup() {
-    size(480,120);
-    stroke(0,102);
+    size(240, 120);
+    x = width/2;
 }
 
 void draw() {
-    float weight = dist(mouseX,mouseY,pmouseX,pmouseY);
-    strokeWeight(weight);
-    line(mouseX,mouseY,pmouseX,pmouseY);
+    background(204);
+    if (mouseX > x) {
+        x += 0.5;
+        offset = -10;
+    }
+    if (mouseX < x) {
+        x -= 0.5;
+        offset = 10;
+    }
+    line(x, 0, x, height);
+    line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+    line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+    line(mouseX, mouseY, mouseX + offset * offset * offset, mouseY);
 }
-
