@@ -157,26 +157,47 @@
 //     }
 // }
 
-float x;
-int offset = 10;
+// float x;
+// int offset = 10;
+
+// void setup() {
+//     size(240, 120);
+//     x = width/2;
+// }
+
+// void draw() {
+//     background(204);
+//     if (mouseX > x) {
+//         x += 0.5;
+//         offset = -10;
+//     }
+//     if (mouseX < x) {
+//         x -= 0.5;
+//         offset = 10;
+//     }
+//     line(x, 0, x, height);
+//     line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+//     line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+//     line(mouseX, mouseY, mouseX + offset * offset * offset, mouseY);
+// }
+
+int x = 120;
+int y = 60;
+int radius = 12;
 
 void setup() {
-    size(240, 120);
-    x = width/2;
+    size(240,120);
+    ellipseMode(RADIUS);
 }
 
 void draw() {
     background(204);
-    if (mouseX > x) {
-        x += 0.5;
-        offset = -10;
+    float d = dist(mouseX,mouseY,x,y);
+    if (d < radius) {
+        radius++;
+        fill(0);
+    } else {
+        fill(255);
     }
-    if (mouseX < x) {
-        x -= 0.5;
-        offset = 10;
-    }
-    line(x, 0, x, height);
-    line(mouseX, mouseY, mouseX + offset, mouseY - 10);
-    line(mouseX, mouseY, mouseX + offset, mouseY + 10);
-    line(mouseX, mouseY, mouseX + offset * offset * offset, mouseY);
+    ellipse(x,y,radius,radius);  
 }
