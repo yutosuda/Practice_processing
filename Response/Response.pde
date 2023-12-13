@@ -202,10 +202,24 @@
 //     ellipse(x,y,radius,radius);  
 // }
 
-int x = 80;
-int y = 30;
-int w = 80;
-int h = 60;
+// int x = 80;
+// int y = 30;
+// int w = 80;
+// int h = 60;
+
+// void setup() {
+//     size(240, 120);
+// }
+
+// void draw() {
+//     background(204);
+//     if ((mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
+//         fill(0);
+//     } else {
+//         fill(255);
+//     }
+//     rect(x,y,w,h);
+// }
 
 void setup() {
     size(240, 120);
@@ -213,10 +227,8 @@ void setup() {
 
 void draw() {
     background(204);
-    if ((mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
-        fill(0);
-    } else {
-        fill(255);
+    line(20, 20, 220, 100);
+    if (keyPressed) {
+        line(200,20,20, 100);
     }
-    rect(x,y,w,h);
 }
