@@ -181,23 +181,42 @@
 //     line(mouseX, mouseY, mouseX + offset * offset * offset, mouseY);
 // }
 
-int x = 120;
-int y = 60;
-int radius = 12;
+// int x = 120;
+// int y = 60;
+// int radius = 12;
+
+// void setup() {
+//     size(240,120);
+//     ellipseMode(RADIUS);
+// }
+
+// void draw() {
+//     background(204);
+//     float d = dist(mouseX,mouseY,x,y);
+//     if (d < radius) {
+//         radius++;
+//         fill(0);
+//     } else {
+//         fill(255);
+//     }
+//     ellipse(x,y,radius,radius);  
+// }
+
+int x = 80;
+int y = 30;
+int w = 80;
+int h = 60;
 
 void setup() {
-    size(240,120);
-    ellipseMode(RADIUS);
+    size(240, 120);
 }
 
 void draw() {
     background(204);
-    float d = dist(mouseX,mouseY,x,y);
-    if (d < radius) {
-        radius++;
+    if ((mouseX > x) && (mouseX < x+w) && (mouseY > y) && (mouseY < y+h)){
         fill(0);
     } else {
         fill(255);
     }
-    ellipse(x,y,radius,radius);  
+    rect(x,y,w,h);
 }
