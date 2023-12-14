@@ -262,24 +262,53 @@
 //     line(90, 20, 90, 100);
 // }
 
-int x = 215;
-int y = 45;
+// int x = 215;
+// int y = 45;
+
+// void setup() {
+//     size(480, 120);
+// }
+
+// void draw() {
+//     if (keyPressed && (key == CODED)) {
+//         if (keyCode == LEFT) {
+//             x--;
+//         } else if (keyCode == RIGHT) {
+//             x++;
+//         } else if (keyCode == UP) {
+//             y--;
+//         } else if (keyCode == DOWN) {
+//             y++;
+//         }
+//         rect(x, y, 50, 50);
+//     }
+// }
+
+// void setup() {
+//     size(240, 120);
+//     strokeWeight(12);
+// }
+
+// void draw() {
+//     background(204);
+//     stroke(102);
+//     line(mouseX, 0, mouseX, height);
+//     stroke(0);
+//     float mx = mouseX/2 + 60;
+//     line(mx, 0, mx, height);
+// }
 
 void setup() {
-    size(480, 120);
+    size(240, 120);
+    strokeWeight(12);
 }
 
 void draw() {
-    if (keyPressed && (key == CODED)) {
-        if (keyCode == LEFT) {
-            x--;
-        } else if (keyCode == RIGHT) {
-            x++;
-        } else if (keyCode == UP) {
-            y--;
-        } else if (keyCode == DOWN) {
-            y++;
-        }
-        rect(x, y, 50, 50);
-    }
+    background(204);
+    stroke(102);
+    line(mouseX, 0, mouseX, height);
+    stroke(0);
+
+    float mx = map(mouseX, 0, width, 60, 180);
+    line(mx, 0, mx, height);
 }
