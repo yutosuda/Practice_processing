@@ -244,20 +244,42 @@
 //     text(key, 60, 80);
 // }
 
+// void setup() {
+//     size(120, 120);
+// }
+
+// void draw() {
+//     background(204);
+//     if (keyPressed) {
+//         if((key == 'h') || (key == 'H')) {
+//             line(30, 60, 90, 60);
+//         }
+//         if ((key == 'n') || (key == 'N')) {
+//             line(30, 20, 90, 100);
+//         }
+//     }
+//     line(30, 20, 30, 100);
+//     line(90, 20, 90, 100);
+// }
+
+int x = 215;
+int y = 45;
+
 void setup() {
-    size(120, 120);
+    size(480, 120);
 }
 
 void draw() {
-    background(204);
-    if (keyPressed) {
-        if((key == 'h') || (key == 'H')) {
-            line(30, 60, 90, 60);
+    if (keyPressed && (key == CODED)) {
+        if (keyCode == LEFT) {
+            x--;
+        } else if (keyCode == RIGHT) {
+            x++;
+        } else if (keyCode == UP) {
+            y--;
+        } else if (keyCode == DOWN) {
+            y++;
         }
-        if ((key == 'n') || (key == 'N')) {
-            line(30, 20, 90, 100);
-        }
+        rect(x, y, 50, 50);
     }
-    line(30, 20, 30, 100);
-    line(90, 20, 90, 100);
 }
