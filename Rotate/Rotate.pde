@@ -7,11 +7,24 @@
 //     rect(0, 0, 160, 20);
 // }
 
+// void setup() {
+//     size(120, 120);
+// }
+
+// void draw() {
+//     rotate(mouseX / 100.0);
+//     rect(-80,-10,160,20);
+// }
+
+float angle = 0;
+
 void setup() {
     size(120, 120);
 }
 
 void draw() {
-    rotate(mouseX / 100.0);
-    rect(-80,-10,160,20);
+    translate(mouseX, mouseY);
+    rotate(angle);
+    rect(-15,-15,30,30);
+    angle += 0.1;
 }
